@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+  <script type="text/javascript">
+  function validate()
+  {
+    //email vaidation
+    var emailID = document.getElementById("email").value;
+    atpos = emailID.indexOf("@");
+    dotpos = emailID.lastIndexOf(".");
+
+    if (atpos < 1 || ( dotpos - atpos < 2 ))
+    {
+      alert("Please enter correct email ID")
+      document.getElementById("email").focus() ;
+      return false;
+    }
+
+    var myInput = document.getElementById("pass1");
+    var repass = document.getElementById("pass2");
+
+    var lowerCaseLetters = /[a-z]/g;
+    var upperCaseLetters = /[A-Z]/g;
+    var numbers = /[0-9]/g;
+    //lowerCaseLetters validation
+    if(!(myInput.value.match(lowerCaseLetters))) {
+      alert("Lower case must be present");
+      document.getElementById("pass1").focus() ;
+      return false;
+    }
+    //upperCaseLetters validation
+    if(!(myInput.value.match(upperCaseLetters))) {
+      alert(" Upper case must be present");
+      document.getElementById("pass1").focus() ;
+      return false;
+    }
+    //numbers validation
+    if(!(myInput.value.match(numbers))) {
+      alert("Number must be present");
+      document.getElementById("pass1").focus() ;
+      return false;
+    }
+    //passwords check
+    if(document.getElementById("pass1").value !== document.getElementById("pass2").value )
+    {
+      alert("Password dosen't match");
+      document.getElementById("pass2").focus() ;
+      return false;
+    }
+
+    return( true );
+  }
+
+  </script>
+
+  <body class="body l" background="img/main2.jpg">
+
+    <div class="header">
+      <a href="http://localhost:1337/index" class="logo">INVENTORY DROID</a>
+      <div class="header-right">
+
+        <a class="active" href="http://localhost:1337/index">Home</a>
+
+      </div>
+    </div><br><br><br>
+
+    <div class="login-card">
+      <h1>Register</h1>
+      <form  form="form" onsubmit="return(validate())" action="http://localhost:1337/regsuc" method="post">
+      <input type="text" name="_id" id="name" value="" placeholder="Name"  required >
+      <input type="text" name="email" id="email" value="" placeholder="Email" required >
+      <input type="password" name="password" id="pass1" value="" placeholder="Password" required >
+      <input type="password" name="repassword" id="pass2" value="" placeholder="RE-pass" required ><br>
+      <input type="submit" class="login login-submit" value="Register">
+    </form>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body class="body l" background="img/main2.jpg">
+
+    <div class="header">
+      <a href="http://localhost:1337/index" class="logo">INVENTORY DROID</a>
+      <div class="header-right">
+
+        <a class="active" href="http://localhost:1337/index">Home</a>
+
+      </div>
+    </div><br><br><br>
+
+    <div class="login-card">
+      <h1>Sign in</h1>
+      <form  form="form" action="http://localhost:1337/loguser" method="post">
+      <input type="text" name="_id" id="name1" value="" placeholder="Name" required >
+      <input type="password" name="password" id="pass1" value="" placeholder="Password" required><br>
+      <input type="submit" class="login login-submit" value="Login">
+      <button type="button" class="login button" onclick="window.location.href='http://localhost:1337/register';">Register</button>
+    </form>
+  </div>
+
+  </body>
+</html>

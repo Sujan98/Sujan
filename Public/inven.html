@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Droid</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+  <body class="body" id="body" >
+
+    <div class="header">
+      <a href="http://localhost:1337/index" class="logo">INVENTORY DROID</a>
+      <div class="header-right">
+
+        <a class="active" href="http://localhost:1337/index">Home</a>
+        <a class="active" href="http://localhost:1337/logout">Logout</a>
+
+      </div>
+    </div><br>
+
+    <h1 class="inven s">Inventories</h1>
+    <div class = "wallet s q">
+      <form action="http://localhost:1337/wallet" method="GET">
+        Wallet Money :
+        <input type="text" name="id" id="money" value="0" readonly required >
+        <button type="submit" class="b s" > Add Money</button>
+      </form>
+    </div><br>
+
+    <table class="table s" id="table">
+      <thead>
+        <tr>
+          <th class="inven" scope="col">Product Name</th>
+          <th class="inven" scope="col">Product type</th>
+          <th class="inven" scope="col">Product cost</th>
+          <th class="inven" scope="col">Product value:</th>
+          <th class="inven" scope="col">Product Bill:</th>
+        </tr>
+      </thead>
+      <tbody id="app">
+
+        <tr>
+          <td >{{ food }}</td>
+          <td class="nr5">{{ type }}</td>
+          <td ><li class="tr5" value="150">{{ rs }}</li></td>
+          <td><button type="button" class="data" onclick="val5()"> {{ val }}</button><span class="value5">{{ sp1 }}</span></td>
+          <td><button type="button" id="button5" v-on:click="add" onclick="buy5()">{{ product }}</button><span class="item5">   {{ sp2 }}</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="button" onclick="purchase()" class="add "><h5>Purchase</h5></button>
+
+    <div v-if="inStock"  class="s sss" id="newp">
+      <h2   class="inven ">Product entry</h2><br>
+      Product Name: <input type="text"     id="pname" value="" placeholder="Name" required ><br><br>
+      Product Type: <select id="type">
+        <option value="Business">{{ v1 }}</option>
+        <option value="Food">{{ v2 }}</option>
+      </select><br><br>
+      Product Cost: <input type="number" id="pcost" value="" placeholder="Cost" required><br><br>
+      <button type="button" class="b" onclick="add()" ><h6>{{ add }}<h6></button><br><br>
+      </div>
+
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/value.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+      <script src="js/Vue.js"></script>
+
+    </body>
+</html>

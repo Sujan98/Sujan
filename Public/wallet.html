@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment card checkout</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles2.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="body body2">
+
+  <div class="header">
+    <a href="http://localhost:1337/index" class="logo">INVENTORY DROID</a>
+    <div class="header-right">
+
+      <a class="active" href="http://localhost:1337/index">Home</a>
+      <a class="active" href="http://localhost:1337/logout">Logout</a>
+
+    </div>
+  </div><br>
+
+  <div class="container">
+  <div class="col1">
+    <div class="card">
+      <div class="front">
+        <div class="type">
+          <img class="bankid"/>
+        </div>
+        <span class="chip"></span>
+        <span class="card_number">&#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; </span>
+        <div class="date"><span class="date_value">MM / YYYY</span></div>
+        <span class="fullname">FULL NAME</span>
+      </div>
+      <div class="back">
+        <div class="magnetic"></div>
+        <div class="bar"></div>
+        <span class="seccode">&#x25CF;&#x25CF;&#x25CF;</span>
+        <span class="chip"></span><span class="disclaimer">This card is property of Random Bank of Random corporation. <br> If found please return to Random Bank of Random corporation - 21968 Paris, Verdi Street, 34 </span>
+      </div>
+    </div>
+  </div>
+  <div class="col2">
+    <form action="http://localhost:1337/inven"  onsubmit="return ss()" method="GET">
+      <label>Amount:</label>
+      <input class="number" id="amoun" type="number" name="amount" value="" placeholder="Rupees"/>
+      <label>Card Number:</label>
+      <input class="number" type="number" name="num" ng-model="ncard" maxlength="19" placeholder="Number"/>
+      <label>Cardholder name:</label>
+      <input class="inputname" type="text" name="name" placeholder="Name"/>
+      <label>Expiry date:</label>
+      <input class="expire" type="text" name="exp" placeholder="MM / YYYY"/>
+      <label>Security Number:</label>
+      <input class="ccv" type="number" name="cvv" placeholder="CVV" maxlength="3"/>
+      <input type="submit" class="buy" value="Pay">
+    </form>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script  src="js/wallet.js"></script>
+  <script src="js/value.js"></script>
+
+  </body>
+</html>
